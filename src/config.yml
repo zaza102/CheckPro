@@ -1,0 +1,13 @@
+settings:
+####is the Plugin Enabled
+  enabled: true
+####should the plugin check: are they allowed to build
+  CheckUserBuilding: true
+####should the plugin check: are they allowed to craft
+  CheckUserCrafting: true
+####should the plugin check: are they allowed to wear
+  CheckUserWearing: true
+####should the plugin check: are they allowed to use any items
+  CheckUserUsing: true
+####Language is: en = English, de = german/Deutsch
+  language: en

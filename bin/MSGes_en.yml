@@ -1,0 +1,26 @@
+MSG:
+#tools
+   AxeDenyMessage: You are not allowed to use this Axe!
+   PickaxeDenyMessage: You are not allowed to use this Pickaxe!
+   HoeDenyMessage: You are not allowed to use this Hoe!
+   ShovelDenyMessage: You are not allowed to use this Shovel!
+#Armor
+   HelmetDenyMessage: You are not allowed to wear this Helmet!
+   ChestplateDenyMessage: You are not allowed to wear this Chestplate!
+   LeggingsDenyMessage: You are not allowed to wear this Leggings!
+   BootsDenyMessage: You are not allowed to wear this Boots!
+#War Tools
+   SwordDenyMessage: You are not allowed to use this Sword!
+   BowDenyMessage: You are not allowed to use this Bow!
+   ArrowDenyMessage: You are not allowed to use this Arrows!
+#Other Tools
+   FishgingrodDenyMessage: You are not allowed to use this Fishingrod!
+   CompassDenyMessage: You are not allowed to use this compass!
+   Flint_and_StealDenyMessage: You are not allowed to use this Flint and Steal!
+   ScissorsDenyMessage: You are not allowed to use this pair of scissors!
+   NametagDenyMessage: You are not allowed to use this Nametag!
+#Building
+   PlayerDenyBuildingMessage: You are not allowed to build!
+   PlayerDenyBreakingMessage: You are not allowed to break blocks!
+#Crafting
+   CraftingDenyMessage: You are not allowed to craft this Item!

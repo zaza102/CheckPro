@@ -1,0 +1,143 @@
+name: CheckPro
+author: Zaza
+version: 0.1.7
+depends: Vault
+softdepends: [PermissionEx]
+description: a Plugin who checks what can the User build, craft, or use
+
+main: me.zaza.CheckPro.CheckPro
+
+commands:
+   checkpro:
+      description: Different commands
+      usage: /checkpro
+      aliases: chpr
+           
+permissions:
+   CheckPro.Reload:
+      description: You are allowed to reload the plugin
+      default: op
+   CheckPro.allow.*:
+      description: You are allowed to use, wear, build
+      default: op
+      children:
+         CheckPro.allow.armor.*: true
+         CheckPro.allow.wartools.*: true
+         CheckPro.allow.tools.*: true
+         CheckPro.allow.craft.*: true
+         CheckPro.allow.building: true
+         CheckPro.allow.breaking: true
+               
+   CheckPro.allow.armor.*:
+      description: You can wear all stacks of armor
+      default: false
+      children:
+         CheckPro.allow.armor.leather.*: true
+         CheckPro.allow.armor.iron.*: true
+         CheckPro.allow.armor.gold.*: true
+         CheckPro.allow.armor.diamond.*: true
+         CheckPro.allow.armor.chainmail.*: true
+   CheckPro.allow.armor.leather.*:
+      description: You can wear leather armor
+      default: false
+      children:
+         CheckPro.allow.armor.leather.helmet: true
+         CheckPro.allow.armor.leather.chestplate: true
+         CheckPro.allow.armor.leather.leggings: true
+         CheckPro.allow.armor.leather.boots: true
+   CheckPro.allow.armor.iron.*:
+      description: You can wear iron armor
+      default: false
+      children:
+         CheckPro.allow.armor.iron.helmet: true
+         CheckPro.allow.armor.iron.chestplate: true
+         CheckPro.allow.armor.iron.leggings: true
+         CheckPro.allow.armor.iron.boots: true
+   CheckPro.allow.armor.gold.*:
+      description: You can wear gold armor
+      default: false
+      children:
+         CheckPro.allow.armor.gold.helmet: true
+         CheckPro.allow.armor.gold.chestplate: true
+         CheckPro.allow.armor.gold.leggings: true
+         CheckPro.allow.armor.gold.boots: true
+   CheckPro.allow.armor.diamond.*:
+      description: You can wear diamond armor
+      default: false
+      children:
+         CheckPro.allow.armor.diamond.helmet: true
+         CheckPro.allow.armor.diamond.chestplate: true
+         CheckPro.allow.armor.diamond.leggings: true
+         CheckPro.allow.armor.diamond.boots: true
+
+   CheckPro.allow.wartools.*:
+      description: You can use all swords and bow and arrow
+      default: false
+      childern:
+         CheckPro.allow.wartool.wood: true
+         CheckPro.allow.wartool.stone: true
+         CheckPro.allow.wartool.iron: true
+         CheckPro.allow.wartool.gold: true
+         CheckPro.allow.wartool.diamond: true
+         CheckPro.allow.wartool.bowandarrow.*: true
+   CheckPro.allow.wartools.bowandarrow.*:
+      description: You can use bow and arrow
+      default: false
+      children:
+         CheckPro.allow.wartool.bow: true
+         CheckPro.allow.wartool.arrow: true
+
+         
+         
+   CheckPro.allow.tools.*:
+      description: You can use all tools
+      default: false
+      children:
+         CheckPro.allow.tool.wood.*: true
+         CheckPro.allow.tool.stone.*: true
+         CheckPro.allow.tool.gold.*: true
+         CheckPro.allow.tool.diamond.*: true
+         CheckPro.allow.tool.iron.*: true
+         CheckPro.allow.othertools.*: true
+         
+   CheckPro.allow.tools.wood.*:
+      description: You can use all wooden tools
+      default: false
+      children:
+         CheckPro.allow.tool.wood.axe: true
+         CheckPro.allow.tool.wood.pickaxe: true
+         CheckPro.allow.tool.wood.hoe: true
+         CheckPro.allow.tool.wood.shovel: true
+   CheckPro.allow.tools.stone.*:
+      description: You can use all stone tools
+      default: false
+      children:
+         CheckPro.allow.tool.stone.axe: true
+         CheckPro.allow.tool.stone.pickaxe: true
+         CheckPro.allow.tool.stone.hoe: true
+         CheckPro.allow.tool.stone.shovel: true
+   CheckPro.allow.tools.gold.*:
+      description: You can use all gold tools
+      default: false
+      children:
+         CheckPro.allow.tool.gold.axe: true
+         CheckPro.allow.tool.gold.pickaxe: true
+         CheckPro.allow.tool.gold.hoe: true
+         CheckPro.allow.tool.gold.shovel: true
+   CheckPro.allow.tools.diamond.*:
+      description: You can use all diamond tools
+      default: false
+      children:
+         CheckPro.allow.tool.diamond.axe: true
+         CheckPro.allow.tool.diamond.pickaxe: true
+         CheckPro.allow.tool.diamond.hoe: true
+         CheckPro.allow.tool.diamond.shovel: true
+   CheckPro.allow.othertools.*:
+      description: You can use a compass, flint_and_steal...
+      default: false
+      children:
+         CheckPro.allow.tool.compass: true
+         CheckPro.allow.tool.flintandsteal: true
+         CheckPro.allow.tool.fishingrod: true
+         CheckPro.allow.tool.shears: true
+         CheckPro.allow.tool.nametag: true

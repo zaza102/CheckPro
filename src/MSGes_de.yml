@@ -1,0 +1,26 @@
+MSG:
+#tools
+   AxeDenyMessage: Du darfst diese Axt nicht benutzen!
+   PickaxeDenyMessage: Du darfst diese Spitzhacke nicht benutzen!
+   HoeDenyMessage: Du darfst diese Hacke nicht benutzen!
+   ShovelDenyMessage: Du darfst diese Schaufel nicht benutzen!
+#Armor
+   HelmetDenyMessage: Du darfst diesen Helm nicht anziehen!
+   ChestplateDenyMessage: Du darfst diesen Brustpanzer nicht anziehen!
+   LeggingsDenyMessage: Du darfst diese Hose nicht anziehen!
+   BootsDenyMessage: Du darfst diese Schuhe nicht anziehen!
+#War Tools
+   SwordDenyMessage: Du darfst dieses Schwert nicht verwenden!
+   BowDenyMessage: Du darfst keinen Bogen verwenden!
+   ArrowDenyMessage: Du darfst keine Pfeile verwenden!
+#Other Tools
+   FishgingrodDenyMessage: Du darfst die Angel nicht benutzen!
+   CompassDenyMessage: Du darfst den Kompass nicht benutzen!
+   Flint_and_StealDenyMessage: Du darfst das Feuerzeug nicht benutzen!
+   ScissorsDenyMessage: Du darfst die Schere nicht benutzen!
+   NametagDenyMessage: Du darfst das Namensschild nicht benutzen!
+#Building
+   PlayerDenyBuildingMessage: Du darfst nicht bauen!
+   PlayerDenyBreakingMessage: Du darfst nichts abbauen!
+#Crafting
+   CraftingDenyMessage: Du darfst dieses Item nicht craften!
