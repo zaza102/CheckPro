@@ -26,7 +26,7 @@ public class PlayerCraftListener implements Listener
 			return;
 		}
 		Player p = (Player) e.getViewers().get(0);
-		if(p.isOp() != true && (!p.hasPermission("CheckPro.allow.craft.*") || !p.hasPermission("CheckPro.allow.craft." + e.getRecipe().getResult().getType())))
+		if(p.isOp() != true && (!p.hasPermission("CheckPro.allow.craft.*") && !p.hasPermission("CheckPro.allow.craft." + e.getRecipe().getResult().getType())))
 		{
 			e.getInventory().setResult(null);
 			p.sendMessage("§3[CheckPro]" + "§4 " + CraftingDenyMessage);
@@ -35,11 +35,10 @@ public class PlayerCraftListener implements Listener
 	@EventHandler(priority=EventPriority.LOW, ignoreCancelled=true)
 	public void onCraft(CraftItemEvent event) {
 		Player player = (Player)event.getWhoClicked();
-		if (!player.isOp() && (!player.hasPermission("CheckPro.allow.craft.*") || !player.hasPermission("CheckPro.allow.craft." + event.getCurrentItem().getType()))) {
+		if (!player.isOp() && (!player.hasPermission("CheckPro.allow.craft.*") && !player.hasPermission("CheckPro.allow.craft." + event.getCurrentItem().getType()))) {
 			event.setResult(null);
 			event.setCancelled(true);
+			player.sendMessage("§3[CheckPro]" + "§4 " + CraftingDenyMessage);
 		}
 	}
-	
-
 }
