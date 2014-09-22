@@ -1,6 +1,6 @@
 name: CheckPro
 author: Zaza
-version: 0.2.1
+version: 0.2.2
 depends: Vault
 softdepends: [PermissionEx]
 description: a Plugin who checks what can the User build, craft, or use
@@ -25,8 +25,101 @@ permissions:
          CheckPro.allow.wartools.*: true
          CheckPro.allow.tools.*: true
          CheckPro.allow.craft.*: true
+         CheckPro.allow.enchant.*: true
+         CheckPro.allow.brewing: true
+         CheckPro.allow.brewing.*: true
          CheckPro.allow.building: true
          CheckPro.allow.breaking: true
+         
+         
+         
+         
+   CheckPro.allow.craft.woodtools.*:
+      description: You are allowed to craft all Wood_Tools
+      default: false
+      children:
+         CheckPro.allow.craft.wood_pickaxe: true
+         CheckPro.allow.craft.wood_axe: true
+         CheckPro.allow.craft.wood_shovel: true
+         CheckPro.allow.craft.wood_hoe: true
+         CheckPro.allow.craft.wood_sword: true
+   CheckPro.allow.craft.stonetools.*:
+      description: You are allowed to craft all stone_tools
+      default: false
+      children:
+         CheckPro.allow.craft.stone_pickaxe: true
+         CheckPro.allow.craft.stone_axe: true
+         CheckPro.allow.craft.stone_shovel: true
+         CheckPro.allow.craft.stone_hoe: true
+         CheckPro.allow.craft.stone_sword: true
+   CheckPro.allow.craft.irontools.*:
+      description: You are allowed to craft all iron_tools
+      default: false
+      children:
+         CheckPro.allow.craft.iron_pickaxe: true
+         CheckPro.allow.craft.iron_axe: true
+         CheckPro.allow.craft.iron_shovel: true
+         CheckPro.allow.craft.iron_hoe: true
+         CheckPro.allow.craft.iron_sword: true
+   CheckPro.allow.craft.goldtools.*:
+      description: You are allowed to craft all gold_tools
+      default: false
+      children:
+         CheckPro.allow.craft.gold_pickaxe: true
+         CheckPro.allow.craft.gold_axe: true
+         CheckPro.allow.craft.gold_shovel: true
+         CheckPro.allow.craft.gold_hoe: true
+         CheckPro.allow.craft.gold_sword: true
+   CheckPro.allow.craft.diamondtools.*:
+      description: You are allowed to craft all diamond_tools
+      default: false
+      children:
+         CheckPro.allow.craft.diamond_pickaxe: true
+         CheckPro.allow.craft.diamond_axe: true
+         CheckPro.allow.craft.diamond_shovel: true
+         CheckPro.allow.craft.diamond_hoe: true
+         CheckPro.allow.craft.diamond_sword: true
+
+   CheckPro.allow.craft.leatherarmor.*:
+      description: You are allowed to craft all leather_armor contents
+      default: false
+      children:
+         CheckPro.allow.craft.leather_boots: true
+         CheckPro.allow.craft.leather_chestplate: true
+         CheckPro.allow.craft.leather_helmet: true
+         CheckPro.allow.craft.leather_leggings: true
+   CheckPro.allow.craft.ironarmor.*:
+      description: You are allowed to craft all Iron_armor contents
+      default: false
+      children:
+         CheckPro.allow.craft.iron_boots: true
+         CheckPro.allow.craft.iron_chestplate: true
+         CheckPro.allow.craft.iron_leggings: true
+         CheckPro.allow.craft.iron_helmet: true
+   CheckPro.allow.craft.chainmail.*:
+      description: You are allowed to craft all chainmail_armor contents
+      default: false
+      children:
+         CheckPro.allow.craft.chainmail_boots: true
+         CheckPro.allow.craft.chainmail_chestplate: true
+         CheckPro.allow.craft.chainmail_leggings: true
+         CheckPro.allow.craft.chainmail_helmet: true
+   CheckPro.allow.craft.goldarmor.*:
+      description: You are allowed to craft all gold_armor contents
+      default: false
+      children:
+         CheckPro.allow.craft.gold_boots: true
+         CheckPro.allow.craft.gold_chestplate: true
+         CheckPro.allow.craft.gold_leggings: true
+         CheckPro.allow.craft.gold_helmet: true
+   CheckPro.allow.craft.diamondarmor.*:
+      description: You are allowed to craft all diamond_armor contents
+      default: false
+      children:
+         CheckPro.allow.craft.diamond_boots: true
+         CheckPro.allow.craft.diamond_chestplate: true
+         CheckPro.allow.craft.diamond_leggings: true
+         CheckPro.allow.craft.diamond_helmet: true
                
    CheckPro.allow.armor.*:
       description: You can wear all stacks of armor

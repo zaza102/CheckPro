@@ -24,3 +24,12 @@ MSG:
    PlayerDenyBreakingMessage: You are not allowed to break blocks!
 #Crafting
    CraftingDenyMessage: You are not allowed to craft this Item!
+#Enchanting
+   EnchantingDenyMessage: You are not allowed to enchanting this Item!
+   EnchantDenyMessage: You are not allowed to enchant!
+#Repairing
+   RepairingDenyMessage: You are not allowed to use the anvil!
+#Brewing
+   BrewingIngredientDenyMessage: You are not allowed to use this ingredient!
+   BrewingDenyMessage: You are not allowed to brew anything!
+   

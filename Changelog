@@ -1,0 +1,18 @@
+Added smarter Permissions:
+
+   CheckPro.allow.craft.woodtools.*
+   CheckPro.allow.craft.stonetools.*			and so on!
+   
+   CheckPro.allow.craft.leatherarmor.*
+   CheckPro.allow.craft.ironarmor.*				and so on!
+   
+   
+   
+   
+Added Enchanting and BrewingListener
+Permissions:
+  CheckPro.allow.enchanting <-EchantmentTable
+  CheckPro.allow.enchant.<ITEM> <-EnchantmentTable pro Item
+  CheckPro.allow.brewing.<Zutat> <- Brewing Zutat
+  CheckPro.allow.brewing <- Brewing
+  CheckPro.allow.repairing <-Anvil useable

@@ -24,3 +24,11 @@ MSG:
    PlayerDenyBreakingMessage: Du darfst nichts abbauen!
 #Crafting
    CraftingDenyMessage: Du darfst dieses Item nicht craften!
+#Enchanting
+   EnchantingDenyMessage: Du darfst dieses Item nicht verzaubern!
+   EnchantDenyMessage: Du darfst nichts Verzauern!
+#Repairing
+   RepairingDenyMessage: Du darfst den Amboss nicht benutzen!
+#Brewing
+   BrewingIngredientDenyMessage: Du darfst diese Zutat nicht verwenden!
+   BrewingDenyMessage: Du darfst nicht brauen!

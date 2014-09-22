@@ -37,7 +37,7 @@ public class PlayerDamageBlockListener implements Listener
 		Player p = e.getPlayer();
 		if(p.isOp() || p.hasPermission(PlayerBreakingPermission))
 		{
-			e.setCancelled(true);
+			//e.setCancelled(true);
 			return;
 		}
 		if(p.getInventory().getItemInHand().getType().isBlock())

@@ -9,9 +9,12 @@ import java.io.Reader;
 import java.util.logging.Level;
 
 import me.zaza.CheckPro.Commands.ReloadCommand;
+import me.zaza.CheckPro.Listeners.PlayerBrewListener;
 import me.zaza.CheckPro.Listeners.PlayerBuildListener;
 import me.zaza.CheckPro.Listeners.PlayerCraftListener;
 import me.zaza.CheckPro.Listeners.PlayerDamageBlockListener;
+import me.zaza.CheckPro.Listeners.PlayerEnchantListener;
+import me.zaza.CheckPro.Listeners.PlayerPickUpListener;
 import me.zaza.CheckPro.Listeners.PlayerWearListener;
 
 import org.bukkit.Bukkit;
@@ -73,11 +76,21 @@ public class CheckPro extends JavaPlugin
 			plugmag.registerEvents(new PlayerCraftListener(), this);
 		}
 		plugmag.registerEvents(new PlayerWearListener(this), this);
+		plugmag.registerEvents(new PlayerPickUpListener(this), this);
 		if(this.getConfig().getBoolean("settings.CheckUserBuilding"))
 		{	
 			plugmag.registerEvents(new PlayerBuildListener(), this);
 			plugmag.registerEvents(new PlayerDamageBlockListener(), this);
 		}
+		if(this.getConfig().getBoolean("settings.CheckUserEnchanting"))
+		{
+			plugmag.registerEvents(new PlayerEnchantListener(this), this);
+		}
+		if(this.getConfig().getBoolean("settings.CheckUserBrewing"))
+		{
+			plugmag.registerEvents(new PlayerBrewListener(this), this);
+		}
+		//COMMANDS
 		this.getCommand("checkpro").setExecutor(new ReloadCommand(this));
 
 	}

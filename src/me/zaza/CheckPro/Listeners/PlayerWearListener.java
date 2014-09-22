@@ -3,6 +3,7 @@ package me.zaza.CheckPro.Listeners;
 
 import me.zaza.CheckPro.CheckPro;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -12,6 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class PlayerWearListener implements Listener
 {	
@@ -101,11 +103,13 @@ public class PlayerWearListener implements Listener
 		{
 			return;
 		}
+		Bukkit.getPluginManager().callEvent(new PlayerItemHeldEvent(p, p.getInventory().firstEmpty(), p.getInventory().getHeldItemSlot()));
 		checkHelmet(p, armor);
 		checkChestPlate(p, armor);
 		checkLeggings(p, armor);
 		checkBoots(p, armor);	
-	}
+	}	
+	
 	@EventHandler(priority=EventPriority.HIGH)
 	public void onPlayerSwitchItem(PlayerItemHeldEvent e)
 	{
@@ -141,57 +145,8 @@ public class PlayerWearListener implements Listener
 		checkBowOrArrowInHand(p, tool, e);
 		
 	}
-//	@EventHandler(priority=EventPriority.HIGH)
-//	public void onPlayerUse(PlayerInteractEvent e)
-//	{
-//		//String materialEigenschaften = null;
-//		Player p = (Player) e.getPlayer();
-//		ItemStack tool = p.getItemInHand();
-//		if(tool.equals(null) || tool.equals(Material.AIR))
-//		{
-//			e.setCancelled(true);
-//			return;
-//		}
-//		if(tool.getType().isBlock())
-//		{
-//			e.setCancelled(true);
-//			return;
-//		}
-//		if(e.getAction().equals(Action.LEFT_CLICK_BLOCK) 
-//		|| e.getAction().equals(Action.LEFT_CLICK_AIR) 
-//		|| e.getAction().equals(Action.RIGHT_CLICK_AIR) 
-//		|| e.getAction().equals(Action.RIGHT_CLICK_BLOCK)
-//		|| e.getAction().equals(Action.PHYSICAL))
-//		{
-//			
-//		//MAIN TOOLS
-//		checkAxeInHand(p, tool, e);
-//		checkPickaxeInHand(p, tool, e);
-//		checkHoeInHand(p, tool, e);
-//		checkShovelInHand(p, tool, e);
-//		//OTHER TOOLS
-//		checkOtherToolsInHand(p, tool, e);
-//		//WAR TOOLS
-//		checkSwordInHand(p, tool, e);
-//		checkBowOrArrowInHand(p, tool, e);
-//			
-//			
-//			
-//			Material[] mat = Material.values();			
-//			for(Material ma : mat)
-//			{
-//				if(tool.getType().equals(ma))
-//				{
-//
-//					
-//					
-//					
-//				}
-//			}
-//		}
-//	}
-	
-//WAR TOOLS
+
+	//WAR TOOLS
 	private void checkSwordInHand(Player p, ItemStack ItemInHand, PlayerItemHeldEvent e)
 	{	
 		if(!checkItems(ItemInHand,
@@ -238,6 +193,8 @@ public class PlayerWearListener implements Listener
 		if(ItemInHand.getType() == Material.BOW)
 		{
 			ItemStack bow = new ItemStack(Material.BOW);
+			ItemMeta bowmeta = ItemInHand.getItemMeta();
+			bow.setItemMeta(bowmeta);
 			if(!p.hasPermission(BowPermission))
 			{
 				int firstEmpty = p.getInventory().firstEmpty();
@@ -261,10 +218,12 @@ public class PlayerWearListener implements Listener
 		if(ItemInHand.getType() == Material.ARROW)
 		{
 			ItemStack arrow = new ItemStack(Material.ARROW);
+			ItemMeta arrowmeta = ItemInHand.getItemMeta();
+			arrow.setItemMeta(arrowmeta);
 			if(!p.hasPermission(ArrowPermission))
 			{
 				int firstEmpty = p.getInventory().firstEmpty();
-				int itemSlot = e.getNewSlot();
+				int itemSlot = p.getInventory().getHeldItemSlot();
 				
 				arrow.setAmount(ItemInHand.getAmount());
 				
@@ -370,7 +329,9 @@ public class PlayerWearListener implements Listener
 	{
 		if(ItemInHand.getType() == newItem)
 		{
-			ItemStack hoe = new ItemStack(newItem);
+			ItemStack item = new ItemStack(newItem);
+			ItemMeta itemmeta = ItemInHand.getItemMeta();
+			item.setItemMeta(itemmeta);
 			if(!p.hasPermission(Permission))
 			{
 				int firstEmpty = p.getInventory().firstEmpty();
@@ -383,11 +344,11 @@ public class PlayerWearListener implements Listener
 				if(firstEmpty == -1)
 				{
 					Location loc = p.getLocation();
-					p.getWorld().dropItem(loc, hoe);
+					p.getWorld().dropItem(loc, item);
 				}
 				else
 				{
-					p.getInventory().setItem(firstEmpty, hoe);
+					p.getInventory().setItem(firstEmpty, item);
 				}
 				p.sendMessage(DenyMessage);
 			}
@@ -520,13 +481,15 @@ public class PlayerWearListener implements Listener
 		}
 	}
 	
-//RÜSTUNG
+//--------------------------------------------------RÜSTUNG-----------------------------------------------------------
 	private boolean checkArmor(Player p, ItemStack[] armor, int position, Material newItem, String permission, String denyMessage)
 	{
 		ItemStack armorHelmet = null;
 		if(armor[position].getType() == newItem)
 		{
 			armorHelmet = new ItemStack(newItem);
+			ItemMeta armorMeta = armor[position].getItemMeta();
+			armorHelmet.setItemMeta(armorMeta);
 			if(!p.hasPermission(permission))
 			{
 				int firstempty = p.getInventory().firstEmpty();

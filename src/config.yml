@@ -9,5 +9,9 @@ settings:
   CheckUserWearing: true
 ####should the plugin check: are they allowed to use any items
   CheckUserUsing: true
+####should the plugin check: are they allowed to echant
+  CheckUserEnchanting: true
+####should the plugin check: are they allowed to Brew
+  CheckUserBrewing: true
 ####Language is: en = English, de = german/Deutsch
   language: en
