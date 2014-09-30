@@ -1,18 +1,19 @@
-Added smarter Permissions:
-
-   CheckPro.allow.craft.woodtools.*
-   CheckPro.allow.craft.stonetools.*			and so on!
-   
-   CheckPro.allow.craft.leatherarmor.*
-   CheckPro.allow.craft.ironarmor.*				and so on!
-   
-   
-   
-   
-Added Enchanting and BrewingListener
+Added Potion Listener:
 Permissions:
-  CheckPro.allow.enchanting <-EchantmentTable
-  CheckPro.allow.enchant.<ITEM> <-EnchantmentTable pro Item
-  CheckPro.allow.brewing.<Zutat> <- Brewing Zutat
-  CheckPro.allow.brewing <- Brewing
-  CheckPro.allow.repairing <-Anvil useable
+CheckPro.allow.potion.<potiontype> = You are allowed to use this Potiontype
+CheckPro.allow.potion.* = You are allowed to use all Potiontypes
+
+PotionTypes:
+ 	WATER
+ 	REGEN
+ 	SPEED
+ 	FIRE_RESISTANCE
+ 	POISON
+ 	INSTANT_HEAL
+ 	NIGHT_VISION
+ 	WEAKNESS
+ 	STRENGTH
+ 	SLOWNESS
+ 	INSTANT_DAMAGE
+ 	WATER_BREATHING
+ 	INVISIBILITY 

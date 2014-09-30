@@ -15,6 +15,7 @@ import me.zaza.CheckPro.Listeners.PlayerCraftListener;
 import me.zaza.CheckPro.Listeners.PlayerDamageBlockListener;
 import me.zaza.CheckPro.Listeners.PlayerEnchantListener;
 import me.zaza.CheckPro.Listeners.PlayerPickUpListener;
+import me.zaza.CheckPro.Listeners.PlayerPrepareUsePotionListener;
 import me.zaza.CheckPro.Listeners.PlayerWearListener;
 
 import org.bukkit.Bukkit;
@@ -63,7 +64,7 @@ public class CheckPro extends JavaPlugin
 		}		
 		else
 		{
-			System.out.println("[CheckPro] Error wrong Value in the Config, using default config Massage File MSGes_en");
+			System.out.println("[CheckPro] Error wrong Value in the Config, using default config Message File MSGes_en");
 			MSGesFilePath = File.separator + "MSGes_en.yml";
 			MSGes = YamlConfiguration.loadConfiguration(new File(MSGesPath + MSGesFilePath));
 			//set Config Defaults
@@ -85,6 +86,10 @@ public class CheckPro extends JavaPlugin
 		if(this.getConfig().getBoolean("settings.CheckUserEnchanting"))
 		{
 			plugmag.registerEvents(new PlayerEnchantListener(this), this);
+		}
+		if(this.getConfig().getBoolean("settings.CheckUserUsePotions"))
+		{
+			plugmag.registerEvents(new PlayerPrepareUsePotionListener(), this);
 		}
 		if(this.getConfig().getBoolean("settings.CheckUserBrewing"))
 		{

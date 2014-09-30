@@ -32,3 +32,5 @@ MSG:
 #Brewing
    BrewingIngredientDenyMessage: Du darfst diese Zutat nicht verwenden!
    BrewingDenyMessage: Du darfst nicht brauen!
+#Potion
+   PotionUseDenyMessage: Du darfst diesen Trank nicht verwenden!

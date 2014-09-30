@@ -13,5 +13,7 @@ settings:
   CheckUserEnchanting: true
 ####should the plugin check: are they allowed to Brew
   CheckUserBrewing: true
+####should the plugin check: are they allowed to use Potions
+  CheckUserUsePotions: true
 ####Language is: en = English, de = german/Deutsch
   language: en

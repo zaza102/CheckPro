@@ -59,7 +59,6 @@ public class PlayerEnchantListener implements Listener
 							ThreadIsRunning = false;
 						}
 					}, 5L);
-					
 				}
 			}
 		}
@@ -69,7 +68,7 @@ public class PlayerEnchantListener implements Listener
 	public void onPlayerWantEnchanting(PlayerInteractEvent e)
 	{
 		Player p = (Player) e.getPlayer();
-		if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || e.getAction().equals(Action.RIGHT_CLICK_AIR))
+		if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK))
 		{
 			if(e.getClickedBlock().getType().equals(Material.ENCHANTMENT_TABLE))
 			{
@@ -86,7 +85,7 @@ public class PlayerEnchantListener implements Listener
 	public void onPlayerWantRepairing(PlayerInteractEvent e)
 	{
 		Player p = (Player) e.getPlayer();
-		if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || e.getAction().equals(Action.RIGHT_CLICK_AIR))
+		if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK))
 		{
 			if(e.getClickedBlock().getType().equals(Material.ANVIL))
 			{

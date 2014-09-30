@@ -1,6 +1,6 @@
 name: CheckPro
 author: Zaza
-version: 0.2.2
+version: 0.3.1
 depends: Vault
 softdepends: [PermissionEx]
 description: a Plugin who checks what can the User build, craft, or use

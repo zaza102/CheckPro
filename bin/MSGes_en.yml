@@ -32,4 +32,6 @@ MSG:
 #Brewing
    BrewingIngredientDenyMessage: You are not allowed to use this ingredient!
    BrewingDenyMessage: You are not allowed to brew anything!
+#Potion
+   PotionUseDenyMessage: You are not allowed to use this potion!
    

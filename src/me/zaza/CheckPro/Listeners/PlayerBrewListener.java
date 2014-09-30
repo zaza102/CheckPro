@@ -53,7 +53,7 @@ public class PlayerBrewListener implements Listener
 	public void onPlayerWantBrewing(PlayerInteractEvent e)
 	{
 		Player p = (Player) e.getPlayer();
-		if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || e.getAction().equals(Action.RIGHT_CLICK_AIR))
+		if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK))
 		{
 			if(e.getClickedBlock().getType().equals(Material.BREWING_STAND) 
 					|| e.getClickedBlock().getType().equals(Material.BREWING_STAND_ITEM))
